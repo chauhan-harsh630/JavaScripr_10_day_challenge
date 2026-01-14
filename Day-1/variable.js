@@ -61,5 +61,3 @@ console.log(obj);
 }
 
 // console.log(PI);  // PI is not defined
-
-
