@@ -3,28 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
       <h1>Smart Form Validation</h1>
-
       <form id="formData" class="box">
         <div class="column">
           <label>Name</label>
-          <input type="text" placeholder="Enter name." id="name" required/>
+          <input type="text" placeholder="Enter name" id="name" required />
           <small class="error"></small>
         </div>
         <div class="column">
           <label>Email</label>
           <input type="email" placeholder="Enter Email" id="email" required />
-             <small class="error"></small>
+          <small class="error"></small>
         </div>
         <div class="column">
           <label>Password</label>
-          <input type="password" placeholder="Enter password" id="password" required />
-             <small class="error"></small>
+          <input
+            type="password"
+            placeholder="Enter password"
+            id="password"
+            required
+          />
+          <small class="error"></small>
         </div>
 
         <div class="column">
@@ -35,13 +39,9 @@
           <small class="error"></small>
         </div>
         <button id="submitbtn">Submit</button>
-
-           <a href="#">log in</a> <a href="#">sing up</a>
+        <a href="#">log in</a> <a href="#">sing up</a>
       </form>
-
-   
     </div>
-
   </body>
   <script src="script.js"></script>
 </html>
