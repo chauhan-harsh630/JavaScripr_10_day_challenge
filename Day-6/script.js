@@ -2,10 +2,10 @@ const form = document.getElementById("formData");
 const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
-
-
+const MIN_PASSWORD_LENGTH = 8;
+const MIN_NAME_LENGTH = 2;
 window.addEventListener("DOMContentLoaded", () => {
-  const savedData = JSON.parse(localStorage.getItem("user"));
+  const savedData = JSON.parse(localStorage.getItem("userData"));
 
   if (savedData) {
     nameInput.value = savedData.name;
@@ -17,64 +17,63 @@ window.addEventListener("DOMContentLoaded", () => {
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  if (validateForm()) {
+  if (formValidation()) {
     saveLocalStorage();
     alert("Form submitted & saved 🎉");
     form.reset();
+    document.querySelectorAll('.error').forEach(e => e.innerText = ""); // Clear validation error messages after successful submission
   }
 });
 
-
-
-function validateForm() {
+function formValidation() {
   let isValid = true;
 
-  if (nameInput.value.trim().length < 2) {
-    showError(nameInput, "Name must be at least 2 characters");
+  if (nameInput.value.trim().length < MIN_NAME_LENGTH) {
+    showErrorMeassage(nameInput, "Name must be at least 2 characters");
     isValid = false;
   } else {
-    clearError(nameInput);
+    processInput(nameInput);
   }
 
-  if (!validateEmail(emailInput.value)) {
-    showError(emailInput, "Enter a valid email");
+  if (!emailValidation(emailInput.value.trim())) {
+    showErrorMeassage(emailInput, "Enter a valid email");
     isValid = false;
   } else {
-    clearError(emailInput);
+    processInput(emailInput);
   }
 
-  if (passwordInput.value.length < 8) {
-    showError(passwordInput, "Password must be at least 8 characters");
+  if (passwordInput.value.length < MIN_PASSWORD_LENGTH) {
+    showErrorMeassage(passwordInput, "Password must be at least 8 characters");
     isValid = false;
   } else {
-    clearError(passwordInput);
+    processInput(passwordInput);
   }
 
   return isValid;
 }
 
-function showError(input, message) {
+function showErrorMeassage(input, message) {  
   const error = input.closest(".column")?.querySelector(".error");
   if (error) error.innerText = message;
 }
 
-function clearError(input) {
+function processInput(input) {  
   const error = input.closest(".column")?.querySelector(".error");
   if (error) error.innerText = "";
 }
 
-function validateEmail(email) {
+function emailValidation(email) {    
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email);
 }
 
 
 function saveLocalStorage() {
-  const user = {
+  const userData = {   
     name: nameInput.value,
     email: emailInput.value,
     password: passwordInput.value,
   };
 
-  localStorage.setItem("user", JSON.stringify(user));
+  localStorage.setItem("userData", JSON.stringify(userData));
 }
