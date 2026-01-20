@@ -22,65 +22,59 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 20px;
 }
 
 h1 {
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
   margin-bottom: 1.5rem;
-  padding: 1rem;
+  text-align: center;
 }
 
 .container {
   width: 100%;
-  max-width: 365px;
-  padding: 1rem;
-  font-size: clamp(1rem, 2.2vw, 0.9rem);
+  max-width: 600px;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  margin: 20px 30px;
 }
 
-@media (width>40rem) {
-  .container {
-    max-width: 465px;
-    font-size: clamp(1.2rem, 2.5vw, 1.1rem);
-  }
-}
-@media (width>60rem) {
-  .container {
-    max-width: 565px;
-  }
-}
 
 .box {
-  padding: 2rem;
-  margin: 20px auto;
+  padding: clamp(1.5rem, 5vw, 2.5rem);
+  margin: 0 auto;
   background: lightgrey;
   width: 100%;
   color: black;
   border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 input {
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.75rem;
   border-radius: 12px;
   border: 1px solid ghostwhite;
   margin-bottom: 20px;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
-input:focus{
-    outline: none;
-    border-color: blueviolet;
-      box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.2);
+input:focus {
+  outline: none;
+  border-color: blueviolet;
+  box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.2);
 }
+
 #terms-label {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
-
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
 }
+
 #terms {
-    cursor: pointer;
-  margin-top: 1.5rem;
+  cursor: pointer;
+  margin-top: 0.3rem; /* Adjusted for better alignment with text */
   width: auto;
 }
 
@@ -90,37 +84,41 @@ input:focus{
 }
 
 button {
-  padding: 0.5rem;
+  width: 100%; /* Full width looks better on mobile forms */
+  padding: 0.8rem;
   border-radius: 12px;
   border: none;
   background-color: blueviolet;
   color: white;
   margin-top: 20px;
   cursor: pointer;
-  transition:
-    transform 0.2s ease,
-    background-color 0.2s ease;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  font-weight: bold;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 button:hover {
   background-color: rgb(54, 5, 99);
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 a {
   color: rgb(67, 49, 135);
   text-decoration: underline;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
+  margin-top: 15px;
+  width: 100%;
 }
 
 a:hover {
   color: #310357;
 }
 
-.error{
-    color: red;
-    font-size: 1rem;
-    margin-top: -10px;
+.error {
+  color: red;
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+  margin-top: -15px;
+  margin-bottom: 10px;
 }
