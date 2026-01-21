@@ -1,0 +1,168 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+/* ===== Body ===== */
+body {
+  min-height: 100vh;
+  background: linear-gradient(
+    90deg,
+    rgba(131, 48, 191, 0.61) 0%,
+    rgba(159, 106, 214, 0.71) 20%,
+    rgba(50, 9, 121, 0.75) 50%,
+    rgba(0, 212, 255, 0.79) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== Container ===== */
+.container {
+  width: 100%;
+  max-width: 665px;
+  margin: 20px;
+  padding: 2rem;
+  background-color: aliceblue;
+  border-radius: 12px;
+}
+
+/* ===== Header ===== */
+.head {
+  width: 100%;
+  background-color: #ba9ecf;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.head h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== Input ===== */
+input {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 12px;
+  outline: none;
+  margin-top: 1rem;
+}
+
+input:focus {
+  box-shadow: 0 0 0 3px rgba(174, 25, 174, 0.6);
+}
+
+/* ===== Button ===== */
+button {
+  width: 100%;
+  margin-top: 1.5rem;
+  border-radius: 12px;
+  border: none;
+  padding: 0.75rem;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #9222e8;
+  color: aliceblue;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #40036b;
+  transform: scale(1.05);
+}
+
+/* ===== Status ===== */
+#status {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 12px;
+  background-color: #9222e8;
+  color: white;
+}
+
+/* ===== Profile Section ===== */
+.profileSection {
+  width: 100%;
+  margin-top: 2rem;
+  background-color: rgb(83, 49, 117);
+  border-radius: 12px;
+  padding-bottom: 1rem;
+}
+
+/* ===== Profile Info ===== */
+.Profile-image-bio {
+  margin: 20px;
+  padding: 1rem;
+  display: flex;
+  gap: 20px;
+  background-color: aliceblue;
+  border-radius: 12px;
+  align-items: center;
+}
+
+.Profile-image-bio img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+}
+
+/* ===== Repo Section ===== */
+.repo-section {
+  color: white;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.repo-section h3 {
+  font-size: 24px;
+  text-decoration: underline;
+}
+
+/* ===== Repo List ===== */
+#repoList {
+  list-style: none;
+  padding: 1rem;
+  text-align: left;
+}
+
+#repoList li {
+  margin-bottom: 0.5rem;
+}
+
+#repoList a {
+  color: #00d4ff;
+  text-decoration: none;
+}
+
+#repoList a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .Profile-image-bio {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .Profile-image-bio img {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media (min-width: 40em) {
+  .container h1 {
+    font-size: clamp(2rem, 3vw, 3rem);
+  }
+}
