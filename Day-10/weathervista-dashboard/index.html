@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WeatherVista – Weather & Location Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+
+<body>
+  <header class="header">
+    <h1>WeatherVista</h1>
+
+    <div class="controls">
+      <input
+        type="text"
+        id="inputCity"
+        class="input-city"
+        placeholder="City or City,Country (e.g. Delhi or London,UK)"
+      />
+      <button id="searchBtn" type="button">Search</button>
+      <button id="themeToggle" type="button">Dark Mode</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- City Info Card -->
+    <section class="card city-info">
+      <h2 id="city-name">Delhi, IN</h2>
+      <p id="time">10:20 AM</p>
+      <p id="date">22 Jan 2026</p>
+    </section>
+
+    <!-- Weather Card -->
+    <section class="card weather-display">
+      <p id="temp"></p>
+      <p id="humidity"></p>
+      <p id="windspeed"></p>
+      <p id="clouds"></p>
+    </section>
+
+    <!-- Forecast Card -->
+    <section class="card forecast-section">
+      <h3>5-Day Forecast</h3>
+      <div class="forecast-grid">
+        <div class="forecast-day" id="day-1"></div>
+         <div class="forecast-day" id="day-2"></div>
+          <div class="forecast-day" id="day-3"></div>
+           <div class="forecast-day" id="day-4"></div>
+            <div class="forecast-day" id="day-5"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
